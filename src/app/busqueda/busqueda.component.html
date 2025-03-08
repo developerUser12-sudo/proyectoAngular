@@ -1,0 +1,35 @@
+<form class="d-flex flex-column gap-3 w-25 mt-2 p-3" role="search">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" [(ngModel)]="nombre" name="nombre" class="form-control me-2" type="text" placeholder="Nombre"
+        aria-label="Search">
+    </div>
+  
+    <div>
+      <label for="anio">Año:</label>
+      <input id="anio" [(ngModel)]="anio" name="anio" class="form-control me-2" type="number" aria-label="Search">
+    </div>
+    <div>
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" [(ngModel)]="tipo" name="tipo" class="form-control me-2">
+        <option value="">Seleccione</option>
+        <option value="movie">Pelicula</option>
+        <option value="series">Serie</option>
+      </select>
+    </div>
+  
+    <button (click)="onButtonClick()" class="btn btn-outline-success" type="button">Buscar</button>
+  </form>
+  
+  <div *ngIf="peliculas.length > 0">
+    <h2>Resultados para: {{nombreBusqueda|capitalizar}}</h2>
+    <ul>
+      <li *ngFor="let pelicula of peliculas">
+        {{ pelicula.Title }} ({{ pelicula.Year }}). Tipo: <span *ngIf="pelicula.Type=='movie'">pelicula</span><span *ngIf="pelicula.Type=='series'">serie</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="faltaNombre != ''">
+    <p>Debes rellenar el campo nombre</p>
+  </div>
