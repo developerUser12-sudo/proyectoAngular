@@ -23,7 +23,7 @@ export class BusquedaComponent {
     if (this.nombre=="") {
       this.faltaNombre="Tienes que rellenar el parametro nombre";
     }else{
-      this.servicoPeliculas.obtenerPeliculas(this.nombre,this.anio,this.tipo).subscribe((data) => {       
+      this.servicoPeliculas.obtenerPeliculasByParameters(this.nombre,this.anio,this.tipo).subscribe((data) => {       
           this.peliculas = data.Search;
           
       });

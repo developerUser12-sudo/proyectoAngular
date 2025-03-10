@@ -3,7 +3,19 @@
     <p>Esta es una aplicación que te permite buscar tanto películas como series usando la API de OMDB</p>
     <p>Puedes buscar películas por nombre o año, y ver los resultados con detalles como el título, el año de lanzamiento y si es película o serie</p>
     <div class="mt-4">
-        <a href="/busqueda" class="btn btn-primary btn-lg">Comenzar a Buscar</a>
+      <a href="/busqueda" class="btn btn-primary btn-lg">Comenzar a Buscar</a>
+    </div>
+  
+    <div class="row mt-5">
+      <div class="col-md-3 mb-4" *ngFor="let pelicula of peliculas">
+        <div class="card">
+          <img class="card-img-top" src="{{pelicula.Poster}}">
+          <div class="card-body">
+            <h5 class="card-title">{{pelicula.Title}}</h5>
+            <p class="card-text">Año: {{pelicula.Year}}</p>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
   

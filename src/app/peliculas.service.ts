@@ -7,7 +7,7 @@ const DB = "https://www.omdbapi.com/?apikey=78aeea8b";
 })
 export class PeliculasService {
   constructor(private httpClient: HttpClient) { }
-  obtenerPeliculas(nombre: string, anio: number, tipo: string) {
+  obtenerPeliculasByParameters(nombre: string, anio: number, tipo: string) {
     let rutaAnio = "";
     nombre = "&s=" + nombre;
     if (anio != 0) {
@@ -16,9 +16,12 @@ export class PeliculasService {
     if (tipo!="") {
       tipo="&type="+tipo;
     }
-    console.log(`${DB}${nombre}${rutaAnio}${tipo}`);
-
     return this.httpClient.get<any>(`${DB}${nombre}${rutaAnio}${tipo}`);
+
+  }
+  obtenerPeliculas(){
+    let ruta="&s=movie"
+    return this.httpClient.get<any>(`${DB}${ruta}`);
 
   }
 

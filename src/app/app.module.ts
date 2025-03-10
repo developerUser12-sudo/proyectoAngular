@@ -6,10 +6,15 @@ import { AppComponent } from './app.component';
 import { AcercadeComponent } from './acercade/acercade.component';
 import { Pagina404Component } from './pagina404/pagina404.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
-import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CapitalizarPipe } from './capitalizar.pipe';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { ListadoarticulosComponent } from './listadoarticulos/listadoarticulos.component';
+import { AltaarticuloComponent } from './altaarticulo/altaarticulo.component';
+import { ModificacionarticuloComponent } from './modificacionarticulo/modificacionarticulo.component';
+import { BajaarticuloComponent } from './bajaarticulo/bajaarticulo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,14 +22,19 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     Pagina404Component,
     BienvenidaComponent,
     CapitalizarPipe,
-    BusquedaComponent  
+    BusquedaComponent,
+    ListadoarticulosComponent,
+    AltaarticuloComponent,
+    ModificacionarticuloComponent,
+    BajaarticuloComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule 
   ],
-  providers: [provideHttpClient()],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

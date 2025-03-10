@@ -1,0 +1,7 @@
+<form>
+    <input type="hidden" name="id" [(ngModel)]="articulo.id">
+    Descripción: <input type="text" name="descripcion" [(ngModel)]="articulo.descripcion">
+    Precio: <input type="text" name="precio" [(ngModel)]="articulo.precio">
+    <button type="button" (click)="actualizarArticulo()" class="btn btn-success">Modificar</button>
+</form>
+<a href="/listadoarticulos" class="btn btn-secondary">Volver</a>
