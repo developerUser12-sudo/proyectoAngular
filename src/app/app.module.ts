@@ -10,10 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CapitalizarPipe } from './capitalizar.pipe';
 import { BusquedaComponent } from './busqueda/busqueda.component';
-import { ListadoarticulosComponent } from './listadoarticulos/listadoarticulos.component';
-import { AltaarticuloComponent } from './altaarticulo/altaarticulo.component';
-import { ModificacionarticuloComponent } from './modificacionarticulo/modificacionarticulo.component';
-import { BajaarticuloComponent } from './bajaarticulo/bajaarticulo.component';
+
 
 @NgModule({
   declarations: [
@@ -22,11 +19,7 @@ import { BajaarticuloComponent } from './bajaarticulo/bajaarticulo.component';
     Pagina404Component,
     BienvenidaComponent,
     CapitalizarPipe,
-    BusquedaComponent,
-    ListadoarticulosComponent,
-    AltaarticuloComponent,
-    ModificacionarticuloComponent,
-    BajaarticuloComponent
+    BusquedaComponent
   ],
   imports: [
     BrowserModule,
